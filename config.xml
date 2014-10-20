@@ -51,7 +51,7 @@
     <icon gap:platform="ios" height="80" src="res/screen/ios/icon-40-2x.png" width="80" /> 
     <icon gap:platform="ios" height="29" src="res/screen/ios/icon-29.png" width="29" />
 	<icon gap:platform="ios" height="58" src="res/screen/ios/icon-29-2x.png" width="58" />
-    <icon gap:platform="ios" height="76" src="res/screen/ios/ridiculo/icon-76.png" width="76" /> 
+    <icon gap:platform="ios" height="76" src="res/screen/ios/icon-76.png" width="76" /> 
     <icon gap:platform="ios" height="152" src="res/screen/ios/icon-76-2x.png" width="152" />
     <icon gap:platform="ios" height="60" src="res/screen/ios/icon-60.png" width="60" />
     <icon gap:platform="ios" height="120" src="res/screen/ios/icon-60-2x.png" width="120" /> 	 
