@@ -47,19 +47,19 @@
 
     <icon src="icon.png" gap:role="default" />
 	
-    <icon gap:platform="ios" height="40" src="res/icon/ios/icon-40.png" width="40" /> 
-    <icon gap:platform="ios" height="80" src="res/icon/ios/icon-40-2x.png" width="80" /> 
-    <icon gap:platform="ios" height="29" src="res/icon/ios/icon-29.png" width="29" />
-	<icon gap:platform="ios" height="58" src="res/icon/ios/icon-29-2x.png" width="58" />
-    <icon gap:platform="ios" height="76" src="res/icon/ios/icon-76.png" width="76" /> 
-    <icon gap:platform="ios" height="152" src="res/icon/ios/icon-76-2x.png" width="152" />
-    <icon gap:platform="ios" height="60" src="res/icon/ios/icon-60.png" width="60" />
-    <icon gap:platform="ios" height="120" src="res/icon/ios/icon-60-2x.png" width="120" /> 	 
+    <icon gap:platform="ios" height="40" src="http:www.banner.com.hr/klijent/ridiculo/icon-40.png" width="40" /> 
+    <icon gap:platform="ios" height="80" src="http:www.banner.com.hr/klijent/ridiculo/icon-40-2x.png" width="80" /> 
+    <icon gap:platform="ios" height="29" src="http:www.banner.com.hr/klijent/ridiculo/icon-29.png" width="29" />
+	<icon gap:platform="ios" height="58" src="http:www.banner.com.hr/klijent/ridiculo/icon-29-2x.png" width="58" />
+    <icon gap:platform="ios" height="76" src="http:www.banner.com.hr/klijent/ridiculo/icon-76.png" width="76" /> 
+    <icon gap:platform="ios" height="152" src="http:www.banner.com.hr/klijent/ridiculo/icon-76-2x.png" width="152" />
+    <icon gap:platform="ios" height="60" src="http:www.banner.com.hr/klijent/ridiculo/icon-60.png" width="60" />
+    <icon gap:platform="ios" height="120" src="http:www.banner.com.hr/klijent/ridiculo/icon-60-2x.png" width="120" /> 	 
 		 		  		  
-    <icon gap:platform="ios" height="57" src="res/icon/ios/icon-57.png" width="57" />
-    <icon gap:platform="ios" height="72" src="res/icon/ios/icon-72.png" width="72" />
-    <icon gap:platform="ios" height="114" src="res/icon/ios/icon-57-2x.png" width="114" />
-    <icon gap:platform="ios" height="144" src="res/icon/ios/icon-72-2x.png" width="144" />
+    <icon gap:platform="ios" height="57" src="http:www.banner.com.hr/klijent/ridiculo/icon-57.png" width="57" />
+    <icon gap:platform="ios" height="72" src="http:www.banner.com.hr/klijent/ridiculo/icon-72.png" width="72" />
+    <icon gap:platform="ios" height="114" src="http:www.banner.com.hr/klijent/ridiculo/icon-57-2x.png" width="114" />
+    <icon gap:platform="ios" height="144" src="http:www.banner.com.hr/klijent/ridiculo/icon-72-2x.png" width="144" />
 	
     <gap:splash gap:platform="ios" height="1136" src="res/screen/ios/screen-iphone-portrait-568h-2x.png" width="640" />	
     <gap:splash gap:platform="ios" height="2048" src="res/screen/ios/screen-ipad-portrait-2x.png" width="1536" />
