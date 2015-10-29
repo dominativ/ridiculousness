@@ -12,9 +12,9 @@
     <feature name="http://api.phonegap.com/1.0/notification"/>
 
 <plugins>
-	<gap:plugin name="cordova-plugin-inappbrowser " version="1.0.1">
+<gap:plugin name="cordova-plugin-inappbrowser " version="1.0.1">
 <gap:plugin name="org.apache.cordova.device" />
-<gap:plugin name="org.apache.cordova.inappbrowser" version="0.2.4" />
+
 <gap:plugin name="org.apache.cordova.device-motion" />	
 <plugin name="NetworkStatus" value="CDVConnection" />
 <gap:plugin name="org.apache.cordova.network-information" version="0.2.7" />
