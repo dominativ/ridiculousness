@@ -32,9 +32,6 @@
 
 
 <preference name="KeepRunning" value="false"/> 
-	<preference name="SplashScreenDelay" value="10000"/>
-	<preference name="InAppBrowserStorageEnabled" value="true"/>
-	<preference name="LoadingDialog" value="Loading..."/>
     <preference name="orientation" value="default" />
     <preference name="target-device" value="universal" />
     <preference name="fullscreen" value="true" />
