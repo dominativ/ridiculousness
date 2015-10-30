@@ -71,7 +71,7 @@
     <gap:splash gap:platform="ios" height="1024" src="res/screen/ios/screen-ipad-portrait.png" width="768" />
     <gap:splash gap:platform="ios" height="768" src="res/screen/ios/screen-ipad-landscape.png" width="1024" />
    
-    <plugin name="InAppBrowser" value="org.apache.cordova.InAppBrowser" />
+    <plugin name="InAppBrowser" value="org.apache.cordova.InAppBrowser" version="0.2.4" />
 <access origin="*" browserOnly="true"/>
 	<content src="index.html" />
 	<preference name="Fullscreen" value="true" />
