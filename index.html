@@ -34,7 +34,7 @@
             <h1>Ridiculousness Daily</h1>
             <div id="deviceready" class="blink">
                 <p class="event listening">Loading ...</p>
-                <p class="event received">Ready</p>
+                <p class="event received">No interent!</p>
             </div>
         </div>
         <script type="text/javascript" src="cordova.js"></script>
@@ -71,7 +71,7 @@
 
 	
     function onDeviceReady() {
-         var ref = cordova.InAppBrowser.open('http://yababoon.com', '_self', 'location=no,toolbar=no,enableViewportScale=yes');
+         var ref = cordova.InAppBrowser.open('http://yababoon.com', '_self', 'location=yes,toolbar=no,enableViewportScale=yes');
          ref.close();
 
     }
