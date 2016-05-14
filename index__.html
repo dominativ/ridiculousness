@@ -1,7 +1,5 @@
 <!DOCTYPE html>
 <!--
-    Copyright (c) 2012-2014 Adobe Systems Incorporated. All rights reserved.
-
     Licensed to the Apache Software Foundation (ASF) under one
     or more contributor license agreements.  See the NOTICE file
     distributed with this work for additional information
@@ -17,66 +15,114 @@
     "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
      KIND, either express or implied.  See the License for the
     specific language governing permissions and limitations
-    under the License.
+    under the License.#4b2f19
 -->
 <html>
     <head>
         <meta charset="utf-8" />
         <meta name="format-detection" content="telephone=no" />
-        <meta name="msapplication-tap-highlight" content="no" />
         <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
-        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
         <link rel="stylesheet" type="text/css" href="css/index.css" />
-        <title>Hello World</title>
+        <title>Poopalyzer</title>
+        
     </head>
     <body>
-        <div class="app">
-            <h1>Ridiculousness Daily</h1>
-            <div id="deviceready" class="blink">
-                <p class="event listening">Loading ...</p>
-                <p class="event received">No internet!</p>
-            </div>
-        </div>
+
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
-         <script type="text/javascript" charset="utf-8">
 
- function init() {
-              document.addEventListener("deviceready", onDeviceReady, false);
-            }
+ <script type="text/javascript" charset="utf-8">
 
-            function checkConnection() {
-                var networkState = navigator.network.connection.type;
+ 
+    
+    
+    var isAppForeground = true;
 
-                var states = {};
-                states[Connection.UNKNOWN]  = 'Unknown connection';
-                states[Connection.ETHERNET] = 'Ethernet connection';
-                states[Connection.WIFI]     = 'WiFi connection';
-                states[Connection.CELL_2G]  = 'Cell 2G connection';
-                states[Connection.CELL_3G]  = 'Cell 3G connection';
-                states[Connection.CELL_4G]  = 'Cell 4G connection';
-                states[Connection.NONE]     = 'No network connection';
+    function initAds() {
+      if (admob) {
+        var adPublisherIds = {
+          ios : {
+            banner : "",
+            interstitial : ""
+          },
+          android : {
+            banner : "ca-app-pub-5870006467976309/5521117440",
+            interstitial : ""
+          }
+        };
 
-                alert('Connection type: ' + states[networkState]);
-                //navigator.notification.alert('Connection type: ' + states[networkState]);
-            }
+        var admobid = (/(android)/i.test(navigator.userAgent)) ? adPublisherIds.android : adPublisherIds.ios;
+
+        admob.setOptions({
+          publisherId:      admobid.banner,
+          interstitialAdId: admobid.interstitial,
 
 
-    // Wait for device API libraries to load
-    //
-    document.addEventListener("deviceready", onDeviceReady, false);
+        });
 
-    // device APIs are available
-    //
+        registerAdEvents();
 
-	
+      } else {
+        alert('AdMobAds plugin not ready');
+      }
+    }
+
+    function onAdLoaded(e) {
+      if (isAppForeground) {
+        if (e.adType === admob.AD_TYPE.INTERSTITIAL) {
+          console.log("An interstitial has been loaded and autoshown. If you want to load the interstitial first and show it later, set 'autoShowInterstitial: false' in admob.setOptions() and call 'admob.showInterstitialAd();' here");
+        } else if (e.adType === admob.AD_TYPE_BANNER) {
+          console.log("New banner received");
+        }
+      }
+    }
+
+    function onPause() {
+      if (isAppForeground) {
+        admob.destroyBannerView();
+        isAppForeground = false;
+      }
+    }
+
+    function onResume() {
+      if (!isAppForeground) {
+        setTimeout(admob.createBannerView, 1);
+        setTimeout(admob.requestInterstitialAd, 1);
+        isAppForeground = true;
+      }
+    }
+
+    // optional, in case respond to events
+    function registerAdEvents() {
+      document.addEventListener(admob.events.onAdLoaded, onAdLoaded);
+      document.addEventListener(admob.events.onAdFailedToLoad, function (e) {});
+      document.addEventListener(admob.events.onAdOpened, function (e) {});
+      document.addEventListener(admob.events.onAdClosed, function (e) {});
+      document.addEventListener(admob.events.onAdLeftApplication, function (e) {});
+      document.addEventListener(admob.events.onInAppPurchaseRequested, function (e) {});
+
+      document.addEventListener("pause", onPause, false);
+      document.addEventListener("resume", onResume, false);
+    }
+
     function onDeviceReady() {
-         var ref = cordova.InAppBrowser.open('http://yababoon.com', '_self', 'location=no,toolbar=no,enableViewportScale=yes');
-       
+       var ref = cordova.InAppBrowser.open('http://yababoon.com', '_self', 'location=no,toolbar=no,enableViewportScale=yes');
+      document.removeEventListener('deviceready', onDeviceReady, false);
+      initAds();
+
+      // display a banner at startup
+      admob.createBannerView();
+
+      // request an interstitial
 
     }
 
+    document.addEventListener("deviceready", onDeviceReady, false);
+
     </script>
+       
+
         <script type="text/javascript">
             app.initialize();
         </script>
