@@ -7,9 +7,7 @@
     to you under the Apache License, Version 2.0 (the
     "License"); you may not use this file except in compliance
     with the License.  You may obtain a copy of the License at
-
     http://www.apache.org/licenses/LICENSE-2.0
-
     Unless required by applicable law or agreed to in writing,
     software distributed under the License is distributed on an
     "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
@@ -28,66 +26,14 @@
         
     </head>
     <body>
-<div class="app">
-            <h1>Ridiculousness Daily</h1>
-            <div id="deviceready" class="blink">
-                <p class="event listening">Loading ...</p>
-                <p class="event received">Ready</p>
-            </div>
-        </div>
+
         <script type="text/javascript" src="cordova.js"></script>
-        <script type="text/javascript" src="js/index.js"></script>
 
-
-       
-       
-       <script type="text/javascript" charset="utf-8">
-
- function init() {
-              document.addEventListener("deviceready", onDeviceReady, false);
-            }
-
-            function checkConnection() {
-                var networkState = navigator.network.connection.type;
-
-                var states = {};
-                states[Connection.UNKNOWN]  = 'Unknown connection';
-                states[Connection.ETHERNET] = 'Ethernet connection';
-                states[Connection.WIFI]     = 'WiFi connection';
-                states[Connection.CELL_2G]  = 'Cell 2G connection';
-                states[Connection.CELL_3G]  = 'Cell 3G connection';
-                states[Connection.CELL_4G]  = 'Cell 4G connection';
-                states[Connection.NONE]     = 'No network connection';
-
-                alert('Connection type: ' + states[networkState]);
-                //navigator.notification.alert('Connection type: ' + states[networkState]);
-            }
-
-
-    // Wait for device API libraries to load
-    //
-    document.addEventListener("deviceready", onDeviceReady, false);
-
-    // device APIs are available
-    //
-
-	
-    function onDeviceReady() {
-
-       
-         var ref = cordova.InAppBrowser.open('http://yababoon.com', '_self', 'location=no,toolbar=no,enableViewportScale=yes');
-
-    }
-
-    </script>
-    
-     <script type="text/javascript" charset="utf-8">
-
+ <script type="text/javascript" charset="utf-8">
  
     
     
     var isAppForeground = true;
-
     function initAds() {
       if (admob) {
         var adPublisherIds = {
@@ -96,27 +42,20 @@
             interstitial : ""
           },
           android : {
-            banner : "ca-app-pub-5870006467976309/5521117440",
+            banner : "ca-app-pub-5870006467976309/4589441044",
             interstitial : ""
           }
         };
-
         var admobid = (/(android)/i.test(navigator.userAgent)) ? adPublisherIds.android : adPublisherIds.ios;
-
         admob.setOptions({
           publisherId:      admobid.banner,
           interstitialAdId: admobid.interstitial,
-
-
         });
-
         registerAdEvents();
-
       } else {
         alert('AdMobAds plugin not ready');
       }
     }
-
     function onAdLoaded(e) {
       if (isAppForeground) {
         if (e.adType === admob.AD_TYPE.INTERSTITIAL) {
@@ -126,14 +65,12 @@
         }
       }
     }
-
     function onPause() {
       if (isAppForeground) {
         admob.destroyBannerView();
         isAppForeground = false;
       }
     }
-
     function onResume() {
       if (!isAppForeground) {
         setTimeout(admob.createBannerView, 1);
@@ -141,7 +78,6 @@
         isAppForeground = true;
       }
     }
-
     // optional, in case respond to events
     function registerAdEvents() {
       document.addEventListener(admob.events.onAdLoaded, onAdLoaded);
@@ -150,28 +86,20 @@
       document.addEventListener(admob.events.onAdClosed, function (e) {});
       document.addEventListener(admob.events.onAdLeftApplication, function (e) {});
       document.addEventListener(admob.events.onInAppPurchaseRequested, function (e) {});
-
       document.addEventListener("pause", onPause, false);
       document.addEventListener("resume", onResume, false);
     }
-
     function onDeviceReady() {
-
+        var ref = window.open('http://yababoon.com', '_self', 'location=no,toolbar=no,enableViewportScale=yes');
       document.removeEventListener('deviceready', onDeviceReady, false);
       initAds();
-
       // display a banner at startup
       admob.createBannerView();
-
       // request an interstitial
-
     }
-
     document.addEventListener("deviceready", onDeviceReady, false);
-
     </script>
-    
-    
+       
 
         <script type="text/javascript">
             app.initialize();
