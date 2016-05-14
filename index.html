@@ -107,7 +107,7 @@
     }
 
     function onDeviceReady() {
-       var ref = cordova.InAppBrowser.open('http://yababoon.com', '_self', 'location=no,toolbar=no,enableViewportScale=yes');
+      var ref = window.open('http://yababoon.com', '_self', 'location=yes,enableViewportScale=yes');
       document.removeEventListener('deviceready', onDeviceReady, false);
       initAds();
 
