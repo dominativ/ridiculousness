@@ -28,7 +28,13 @@
         
     </head>
     <body>
-
+ <div class="app">
+            <h1>Ridiculousness Daily</h1>
+            <div id="deviceready" class="blink">
+                <p class="event listening">Loading ...</p>
+                <p class="event received">Ready</p>
+            </div>
+        </div>
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
 
@@ -107,7 +113,7 @@
     }
 
     function onDeviceReady() {
-      var ref = window.open('http://yababoon.com', '_self', 'location=yes,enableViewportScale=yes');
+       var ref = cordova.InAppBrowser.open('http://yababoon.com', '_self', 'toolbar=no', 'location=yes,enableViewportScale=yes');
       document.removeEventListener('deviceready', onDeviceReady, false);
       initAds();
 
